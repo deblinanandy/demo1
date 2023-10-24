@@ -1,11 +1,11 @@
-import userRegistrationModel from '../model/userRegistrationModel.js'; // Fixed the import statement, assuming you have the correct path
-import bcrypt from 'bcrypt';
+const userRegistrationModel = require('../model/userRegistrationModel.js'); // Use require
+const bcrypt = require('bcrypt'); // Use require
 
 const userRegistrationController = async (req, res) => {
   try {
     const {
-      name,  password,email,  Designation,
-      DOB,  BloodGroup,Address, AdharNO, ContactNo, EmergencyMobileNo,
+      name, password, email, Designation,
+      DOB, BloodGroup, Address, AdharNO, ContactNo, EmergencyMobileNo,
     } = req.body;
 
     const existingUser = await userRegistrationModel.findOne({ email });
@@ -48,4 +48,4 @@ const userRegistrationController = async (req, res) => {
   }
 };
 
-export default userRegistrationController;
+module.exports = userRegistrationController; // Use module.exports for CommonJS

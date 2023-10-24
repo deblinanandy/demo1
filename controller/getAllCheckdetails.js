@@ -1,4 +1,4 @@
-import Checkin from "../model/checkinModel.js";
+const Checkin = require("../model/checkinModel.js");
 
 const getCheckinController = async (req, res) => {
   try {
@@ -24,4 +24,4 @@ const getCheckinController = async (req, res) => {
   }
 };
 
-export default getCheckinController;
+module.exports = getCheckinController;

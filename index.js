@@ -1,8 +1,8 @@
-import express from 'express';
-import cors from 'cors';
+const express = require('express');
+const cors = require('cors');
 
-import router from './router/router.js';
-import Database from './dbconnect.js'
+const router = require('./router/router.js');
+const Database = require('./dbconnect.js');
 const app = express();
 const port = 8000;
 

@@ -1,4 +1,5 @@
-import checkinModel from "../model/checkinModel.js";
+const checkinModel = require("../model/checkinModel.js");
+
 const deleteCheck = async (req, res) => {
   try {
     // Delete all user login details from the database
@@ -11,4 +12,4 @@ const deleteCheck = async (req, res) => {
   }
 };
 
-export default deleteCheck;
+module.exports = deleteCheck;

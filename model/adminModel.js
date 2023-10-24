@@ -1,20 +1,16 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
-export const AdminSchema = new mongoose.Schema({
-   
-    password: {
-        type: String,
-        required: [true, "Please enter your password"],
-        unique: true,
-    },
-    email: {
-        type: String,
-        required: [true, "Please enter your email"],
-        unique: true,
-    },
-   
+const AdminSchema = new mongoose.Schema({
+  password: {
+    type: String,
+    required: [true, "Please enter your password"],
+    unique: true,
+  },
+  email: {
+    type: String,
+    required: [true, "Please enter your email"],
+    unique: true,
+  },
 });
 
-
-
-export default mongoose.model("Admin", AdminSchema);
+module.exports = mongoose.model("Admin", AdminSchema);

@@ -1,7 +1,7 @@
-import Notice from "../model/Notice.js";
+const Notice = require("../model/Notice.js");
 
 // Function to create a new notice
-export const createNotice = async (req, res) => {
+exports.createNotice = async (req, res) => {
   try {
     const { title, content, author, imageUrl, linkUrl } = req.body;
 
@@ -25,7 +25,7 @@ export const createNotice = async (req, res) => {
 };
 
 // Function to get all notices
-export const getAllNotices = async (req, res) => {
+exports.getAllNotices = async (req, res) => {
   try {
     const notices = await Notice.find().populate("author", "email");
     return res.status(200).json(notices);
@@ -35,7 +35,7 @@ export const getAllNotices = async (req, res) => {
 };
 
 // Function to get a single notice by ID
-export const getNoticeById = async (req, res) => {
+exports.getNoticeById = async (req, res) => {
   try {
     const notice = await Notice.findById(req.params.noticeId).populate(
       "author",
@@ -53,7 +53,7 @@ export const getNoticeById = async (req, res) => {
 };
 
 // Function to update a notice by ID
-export const updateNotice = async (req, res) => {
+exports.updateNotice = async (req, res) => {
   try {
     const updatedNotice = await Notice.findByIdAndUpdate(
       req.params.noticeId,
@@ -76,8 +76,8 @@ export const updateNotice = async (req, res) => {
   }
 };
 
-// Function to delete a notice by ID
-export const deleteAllNotices = async (req, res) => {
+// Function to delete all notices
+exports.deleteAllNotices = async (req, res) => {
   try {
     // Delete all notices from the 'notices' collection
     const result = await Notice.deleteMany({});
@@ -90,11 +90,4 @@ export const deleteAllNotices = async (req, res) => {
   } catch (error) {
     return res.status(500).json({ error: "Error deleting all notices" });
   }
-};
-export default {
-  createNotice,
-  getAllNotices,
-  getNoticeById,
-  updateNotice,
-  deleteAllNotices,
 };

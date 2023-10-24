@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const UserRegistrationSchema = new mongoose.Schema(
   {
@@ -51,4 +51,4 @@ const UserRegistrationSchema = new mongoose.Schema(
   { versionKey: false }
 );
 
-export default mongoose.model("User", UserRegistrationSchema);
+module.exports = mongoose.model("User", UserRegistrationSchema);

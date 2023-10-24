@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const noticeSchema = new mongoose.Schema({
   title: {
@@ -10,8 +10,7 @@ const noticeSchema = new mongoose.Schema({
     required: [true, "Please enter the content of the notice"],
   },
   author: {
-    type:String ,
-    
+    type: String,
   },
   createdAt: {
     type: Date,
@@ -30,4 +29,4 @@ const noticeSchema = new mongoose.Schema({
 
 const Notice = mongoose.model("Notice", noticeSchema);
 
-export default Notice;
+module.exports = Notice;

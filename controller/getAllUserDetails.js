@@ -1,4 +1,4 @@
-import userRegistrationModel from "../model/userRegistrationModel.js";
+const userRegistrationModel = require("../model/userRegistrationModel.js");
 
 const getAllUserDetails = async (req, res) => {
   try {
@@ -18,4 +18,4 @@ const getAllUserDetails = async (req, res) => {
   }
 };
 
-export default getAllUserDetails;
+module.exports = getAllUserDetails;

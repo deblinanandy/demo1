@@ -1,8 +1,8 @@
-import checkinModel from "../model/checkinModel.js";
+const checkinModel = require("../model/checkinModel.js");
 
 const checkinController = async (req, res) => {
   try {
-    const { name, email, designation,  } = req.body; // Use "designation" in lowercase
+    const { name, email, designation } = req.body;
 
     // Check if the user already exists in the database
     const existingUser = await checkinModel.findOne({ email });
@@ -17,9 +17,8 @@ const checkinController = async (req, res) => {
     // User does not exist, create a new user
     const userData = {
       name,
-      designation, // Use "designation" in lowercase
+      designation,
       email,
- 
     };
 
     const newUser = await checkinModel.create(userData);
@@ -37,4 +36,4 @@ const checkinController = async (req, res) => {
   }
 };
 
-export default checkinController;
+module.exports = checkinController;

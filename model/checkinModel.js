@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const checkinModel = new mongoose.Schema({
   name: {
@@ -42,4 +42,4 @@ const checkinModel = new mongoose.Schema({
   }
 }, { versionKey: false });
 
-export default mongoose.model("Checkin", checkinModel);
+module.exports = mongoose.model("Checkin", checkinModel);

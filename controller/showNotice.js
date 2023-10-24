@@ -1,6 +1,6 @@
-import Notice from "../model/Notice.js";
+const Notice = require("../model/Notice.js");
 
-export const showAllNotices = async (req, res) => {
+exports.showAllNotices = async (req, res) => {
   try {
     const notices = await Notice.find();
     // Send the notices in the response

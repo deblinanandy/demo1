@@ -1,4 +1,4 @@
-import userRegistrationModel from "../model/userRegistrationModel.js";
+const userRegistrationModel = require("../model/userRegistrationModel.js");
 
 const deleteAllLoginDetails = async (req, res) => {
   try {
@@ -16,4 +16,4 @@ const deleteAllLoginDetails = async (req, res) => {
   }
 };
 
-export default deleteAllLoginDetails;
+module.exports = deleteAllLoginDetails;

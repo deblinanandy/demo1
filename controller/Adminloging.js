@@ -1,5 +1,5 @@
-import adminModel from '../model/adminModel.js';
-import bcrypt from 'bcrypt';
+const adminModel = require('../model/adminModel.js');
+const bcrypt = require('bcrypt');
 
 const Adminloging = async (req, res) => {
   try {
@@ -7,7 +7,7 @@ const Adminloging = async (req, res) => {
     const user = await adminModel.findOne({ email });
     if (!user) {
       return res.status(200).json({
-        success: false, // Change to false since it's an error
+        success: false,
         message: 'User not found'
       });
     }
@@ -33,4 +33,4 @@ const Adminloging = async (req, res) => {
   }
 };
 
-export default Adminloging;
+module.exports = Adminloging;

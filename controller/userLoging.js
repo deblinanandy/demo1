@@ -1,5 +1,5 @@
-import userRegistrationModel from '../model/userRegistrationModel.js';
-import bcrypt from 'bcrypt';
+const userRegistrationModel = require('../model/userRegistrationModel.js');
+const bcrypt = require('bcrypt');
 
 const userLogin = async (req, res) => {
   try {
@@ -29,4 +29,4 @@ const userLogin = async (req, res) => {
   }
 };
 
-export default userLogin;
+module.exports = userLogin;

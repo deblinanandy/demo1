@@ -1,5 +1,6 @@
-import Notice from "../model/Notice.js";
-export const deleteAllNotices = async (req, res) => {
+const Notice = require("../model/Notice.js");
+
+exports.deleteAllNotices = async (req, res) => {
   try {
     await Notice.deleteMany({}); // Delete all notices
 

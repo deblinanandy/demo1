@@ -1,28 +1,28 @@
-import Router  from "express";
-import userRegistrationController from "../controller/userRegistrationController.js";
-import Admincontrolle from "../controller/Admincontroller.js";
-import Adminloging from "../controller/Adminloging.js";
-import userLoging from "../controller/userLoging.js";
-import getAllLoginDetails from "../controller/getAllLoginDetails.js";
-import deleteAllLoginDetails from "../controller/cleanLoginFormData .js";
-import checkinController from "../controller/checkinController.js";
-import getAllCheckdetails from "../controller/getAllCheckdetails.js";
-import deleteCheck from "../controller/deleteCheck.js";
-import getAllUserDetails from "../controller/getallUserDetails.js";
-import {
+const express = require("express");
+const router = express.Router();
+
+const userRegistrationController = require("../controller/userRegistrationController.js");
+const Admincontrolle = require("../controller/Admincontroller.js");
+const Adminloging = require("../controller/Adminloging.js");
+const userLoging = require("../controller/userLoging.js");
+const getAllLoginDetails = require("../controller/getAllLoginDetails.js");
+const deleteAllLoginDetails = require("../controller/cleanLoginFormData .js");
+const checkinController = require("../controller/checkinController.js");
+const getAllCheckdetails = require("../controller/getAllCheckdetails.js");
+const deleteCheck = require("../controller/deleteCheck.js");
+const getAllUserDetails = require("../controller/getallUserDetails.js");
+const {
   createNotice,
   getAllNotices,
   getNoticeById,
   updateNotice,
   deleteAllNotices,
-} from '../controller/createNotice.js'; // Import your controller functions
-
-const router = Router();
+} = require('../controller/createNotice.js'); // Import your controller functions
 
 router.get('/', (req, res) => {
    res.send(`<h3>Login app routing</h3>`);
+});
 
-})
 router.post('/register', userRegistrationController);
 router.post('/adminregister', Admincontrolle);
 router.post('/adminlog', Adminloging);
@@ -38,4 +38,5 @@ router.get('/allnotices', getAllNotices); // Get all notices
 router.get('/notices/:noticeId', getNoticeById); // Get a single notice by ID
 router.put('/upnotices/:noticeId', updateNotice); // Update a notice by ID
 router.delete('/deletenotices', deleteAllNotices); // Delete a notice by ID
-export default router;
+
+module.exports = router;
