@@ -10,7 +10,7 @@ const deleteAllLoginDetails = require("../controller/cleanLoginFormData .js");
 const checkinController = require("../controller/checkinController.js");
 const getAllCheckdetails = require("../controller/getAllCheckdetails.js");
 const deleteCheck = require("../controller/deleteCheck.js");
-const getAllUserDetails = require("../controller/getallUserDetails.js");
+//const getAllUserDetails = require("../controller/getallUserDetails.js");
 const {
   createNotice,
   getAllNotices,
@@ -31,7 +31,7 @@ router.get('/userlogdetils', getAllLoginDetails);
 router.get('/deleteuser', deleteAllLoginDetails);
 router.post('/check', checkinController);
 router.get('/allcheck', getAllCheckdetails);
-router.get('/alluser', getAllUserDetails);
+//router.get('/alluser', getAllUserDetails);
 router.delete('/delete', deleteCheck);
 router.post('/notices', createNotice); // Create a new notice
 router.get('/allnotices', getAllNotices); // Get all notices
