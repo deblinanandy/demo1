@@ -4,7 +4,7 @@ import cors from 'cors';
 import router from './router/router.js';
 import Database from './dbconnect.js'
 const app = express();
-const port = process.env.PORT||8000;
+const port = 8000;
 
 // Middleware
 app.use(express.json());
